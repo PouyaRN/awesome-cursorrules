@@ -10,17 +10,17 @@ Standards and guardrails for generating Persian (Farsi) text, documentation, UI 
 Origin repository: [PouyaRN/persian-formatting-skill](https://github.com/PouyaRN/persian-formatting-skill)
 
 ## 1. Natural Persian Voice & De-AI-ing
-- Avoid mechanical phrasing. Replace 95% of archaic "می‌باشد" with conversational "است" or "هست".
-- Remove repetitive AI preamble fillers ("لازم به ذکر است", "شایان ذکر است", "در جهان پرشتاب امروزی").
-- Always normalize Arabic letters (`ي`, `ك`) to authentic Persian letters (`ی`, `ک`).
+- Avoid mechanical phrasing. Replace 95% of archaic passive verbs like 'mī-bāshad' with conversational 'ast' or context-appropriate verbs.
+- Remove repetitive AI preamble fillers ('lazem be zekr ast', 'shayan-e zekr ast', generic intros).
+- Always normalize Arabic letters (ي, ك) to authentic Persian letters (ی, ک).
 
 ## 2. Text Direction & BiDi Isolation
 - In HTML-supported chat interfaces, encapsulate output inside:
   `<div dir="rtl" style="text-align: right; direction: rtl; font-family: Tahoma, 'IRANYekanX', 'Vazirmatn', sans-serif;">`
 - Never begin a paragraph with a Latin word or number to prevent layout jumping.
 - Isolate English terms, code tokens, and acronyms using backticks or `<bdi>` tags.
-- Enforce Zero-Width Non-Joiner (ZWNJ / نیم‌فاصله) on continuous verbs ("می‌شود") and compounds ("پیاده‌سازی").
-- Persian punctuation (، ؟ ؛ .) must stick to the previous word with a trailing space. Use Persian quotes (« ») and decimal separators (`۴٫۵`).
+- Enforce Zero-Width Non-Joiner (ZWNJ / Unicode U+200C / half-space) on continuous verb prefixes (e.g., prefix 'mi-' + ZWNJ) and compound nouns.
+- Persian punctuation must stick to the previous word with a trailing space. Use Persian quotes (« ») and decimal separators (۴٫۵).
 
 ## 3. Frontend & CSS Safety Guardrails
 - **CRITICAL:** NEVER apply `letter-spacing` to Persian text (it breaks cursive glyph ligatures).
