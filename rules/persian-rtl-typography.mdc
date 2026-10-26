@@ -20,7 +20,7 @@ Origin repository: [PouyaRN/persian-formatting-skill](https://github.com/PouyaRN
 - Never begin a paragraph with a Latin word or number to prevent layout jumping.
 - Isolate English terms, code tokens, and acronyms using backticks or `<bdi>` tags.
 - Enforce Zero-Width Non-Joiner (ZWNJ / Unicode U+200C / half-space) on continuous verb prefixes (e.g., prefix 'mi-' + ZWNJ) and compound nouns.
-- Persian punctuation must stick to the previous word with a trailing space. Use Persian quotes (« ») and decimal separators (۴٫۵).
+- Attach closing punctuation to the previous word and add one following space. Keep paired marks such as «», (), and [] adjacent to enclosed text. Use Persian quotes and decimal separators where the output context requires them.
 
 ## 3. Frontend & CSS Safety Guardrails
 - **CRITICAL:** NEVER apply `letter-spacing` to Persian text (it breaks cursive glyph ligatures).
